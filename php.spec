@@ -14,7 +14,6 @@
 %if 0%{?copr_username:1}
 # define your copr_username and copr_projectname
 %global scl %{copr_username}-%{copr_projectname}
-BuildRequires: scl-utils-build
 %endif
 
 %if 0%{?scl:1}
