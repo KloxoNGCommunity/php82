@@ -13,7 +13,8 @@
 # If the build is running on copr
 %if 0%{?copr_username:1}
 # define your copr_username and copr_projectname
-%global scl %{copr_username}-%{copr_projectname}
+%global _scl_prefix /opt/%{copr_username}
+%global scl php82
 %endif
 
 %if 0%{?scl:1}
