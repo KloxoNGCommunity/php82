@@ -46,12 +46,12 @@
 
 # Ugly hack. Harcoded values to avoid relocation.
 %global _httpd_mmn         %(cat %{_root_includedir}/httpd/.mmn 2>/dev/null || echo 0)
-%global _httpd_confdir     %{_root_sysconfdir}/httpd/conf.d
+%global _httpd_confdir     %{_sysconfdir}/httpd/conf.d
 %global _httpd_moddir      %{_libdir}/httpd/modules
-%global _root_httpd_moddir %{_root_libdir}/httpd/modules
+%global _root_httpd_moddir %{_libdir}/httpd/modules
 # httpd 2.4 values
 %global _httpd_apxs        %{_root_bindir}/apxs
-%global _httpd_modconfdir  %{_root_sysconfdir}/httpd/conf.modules.d
+%global _httpd_modconfdir  %{_sysconfdir}/httpd/conf.modules.d
 %global _httpd_contentdir  /usr/share/httpd
 
 %global macrosdir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_root_sysconfdir}/rpm; echo $d)
