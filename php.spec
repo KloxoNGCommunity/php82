@@ -1,4 +1,4 @@
-define %__python /usr/bin/python2
+%global __python %{__python2}
 # remirepo spec file for php82-php
 # with SCL and backport stuff, adapted from
 #
