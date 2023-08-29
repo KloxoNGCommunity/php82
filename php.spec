@@ -8,6 +8,13 @@
 #
 # Please preserve changelog entries
 #
+
+# If the build is running on copr
+%if 0%{?copr_username:1}
+# define your copr_username and copr_projectname
+%global scl %{copr_username}-%{copr_projectname}
+%endif
+
 %if 0%{?scl:1}
 %scl_package php
 %else
@@ -128,7 +135,7 @@
 Summary: PHP scripting language for creating dynamic web sites
 Name:    %{?scl_prefix}php
 Version: %{upver}%{?rcver:~%{rcver}}%{?gh_date:.%{gh_date}}
-Release: 2%{?dist}
+Release: 2.kng%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -1851,6 +1858,9 @@ fi
 
 
 %changelog
+* Tue Aug  29 2023 Remi Collet <remi@remirepo.net> - 8.2.9-2.kng
+- Adapt for Copr Build
+
 * Thu Aug  3 2023 Remi Collet <remi@remirepo.net> - 8.2.9-2
 - Update to 8.2.9 - http://www.php.net/releases/8_2_9.php
 - rebuild for new sources
